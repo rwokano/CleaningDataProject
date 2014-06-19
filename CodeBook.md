@@ -6,10 +6,23 @@
   
   Following are several sections describing the requirements and the steps followed to tidy up the data.  Finally, there is a section naming the variables that remained at the end of the process along with what data type they are.
 #### Requirements / Presumptions
-* The code requires the plyr library
+* The code requires the `plyr` library
 * It is presumed that the downloaded zipped datafiles reside in the same directory as the run_analysis.R script
 * It is also presumed that the working directory has been set to this location
 * I also did not optimize this code, it is heavily commented and almost always uses a new variable so the work can be easily traced.  For optimization, I would re-use the variables to reduce memory usage.
+
+#### Files Used
+File Name | Contents
+getdata_projectfiles_UCI HAR Dataset.zip | Download file containing all the other files
+features.txt | Column Labels
+X_test.txt | Test Subject Data
+X_train.txt | Training Subject Data
+subject_test.txt | The Subject IDs for the X_test file
+subject_train.txt | The Subject IDs for the X_train file
+y_test.txt | The Activity IDs for the x_test file
+y_train.txt | The Activity IDs for the x_train file
+activity_labels.txt | The descriptive values the match the Activity ID
+Tidy_Result.txt | The output Tidy Dataset
 
 #### Code Steps
 1. Unzip the data into the working folder.
@@ -57,7 +70,7 @@
 
 
 ##Variable Overview
-The full data description can be found in the 'feature_info.txt' file of the downloaded data.  Below is a table mapping the original column name to the tidy name as it is in the 'tidy_Result.txt' file.  Also included is the type of data.  
+The full data description can be found in the 'feature_info.txt' file of the downloaded data.  Below is a table mapping the original column name to the tidy name as it is in the 'tidy_Result.txt' file.  Also included is the type of data.  Of the approx 560 variables in the initial dataset, only 68 remain in the output dataset.
 
 Column Number | Original Name | Tidy Name | Data Type  
 ---| --- | --- | ---  
