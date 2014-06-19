@@ -22,22 +22,22 @@
 8. Read in the Row Labels, called 'Activities' in the dataset.
 9. Label the data read in step 8.
 10. Append the Activity information, read in step 8/9 to the data.
-*  At this point, I now have the data read in, column names added, the subject id added and the activity id added.
+1.  At this point, I now have the data read in, column names added, the subject id added and the activity id added.
 11. Complete requirement 1 - merge into 1 dataset
 12. Complete requirement 2, select only variables that have mean() or std() in them
-*  Used separate `grep` function calls to get the column names to keep
-*  Be sure to keep column 1 and 2 which contain the Subject and Activity id's
-*  Using [,] notation select on the columns from above
-*  Stored this into new variable 'subsetData' for clarity
+1.  Used separate `grep` function calls to get the column names to keep
+2.  Be sure to keep column 1 and 2 which contain the Subject and Activity id's
+3.  Using [,] notation select on the columns from above
+4.  Stored this into new variable 'subsetData' for clarity
 13. Complete requirement 3 - Add descriptive names
-*  Read in the Activity Descriptions from the file
-*  Label the columns ID and Description respectively
-*  Do a right `join` on the data and these descriptions. All records should match but do an outer join just in case.
-*  This was stored in a new variable `subsetDataWithNames`, again for clarity.
-*  Drop column 1, which was the Activity ID. We no longer need it since the Description is present.
+1.  Read in the Activity Descriptions from the file
+2.  Label the columns ID and Description respectively
+3.  Do a right `join` on the data and these descriptions. All records should match but do an outer join just in case.
+4.  This was stored in a new variable `subsetDataWithNames`, again for clarity.
+5.  Drop column 1, which was the Activity ID. We no longer need it since the Description is present.
 14. Complete requirement 4 - Add descriptive column names
-*  From above, I have already labeled the columns. I do not have V1, V2 V3 etc.  Personally, I would prefer to camel case the names, but the lecture seemed to indicate all lowercase, no hyphens, no underscores.  I feel this makes the variables difficult to use, but did so as I believe that was what was expected in the assignment.
-*  Using multipe calls to `gsub` I changed
+1.  From above, I have already labeled the columns. I do not have V1, V2 V3 etc.  Personally, I would prefer to camel case the names, but the lecture seemed to indicate all lowercase, no hyphens, no underscores.  I feel this makes the variables difficult to use, but did so as I believe that was what was expected in the assignment.
+2.  Using multipe calls to `gsub` I changed
   1. -X to xaxis
   2. -Y to yaxis
   3. -Z to zaxis
@@ -49,11 +49,11 @@
   9. overlay the exisiting names with these new ones.
   10. Copied into a new variable 'tidyData' for clarity
 15. Complete requirement 5 - Aggregate the data
-*  Used the `aggregate` function passing it column 3 through the end of the data.frame using `ncols`
-*  Labeled the 2 coumns `aggregate` grouped by. (The Subject and Activity) so they are not labeled Group.1 and Group.2
-*  Write the data to a tab delimted file using `write.table`
+1.  Used the `aggregate` function passing it column 3 through the end of the data.frame using `ncols`
+2.  Labeled the 2 coumns `aggregate` grouped by. (The Subject and Activity) so they are not labeled Group.1 and Group.2
+3.  Write the data to a tab delimted file using `write.table`
 16. Clean-up
-*  Delete the data files unzipped in the first step using the `unlink` command.
+1.  Delete the data files unzipped in the first step using the `unlink` command.
 
 
 ##Variable Overview
