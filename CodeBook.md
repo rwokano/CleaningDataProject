@@ -1,8 +1,14 @@
 ## Code Walk-Through
   The original data set obtained as part of the assignment contained approximately 560 columns of observations.  This data was broken up into two
   sets.  Test data and Training data.  
-  >(For a full description of the raw dataset, I refer you to the documentation that was provided with it in the
-  zip file.  The Readme.txt and Features.txt explain the organization of the data in complete detail.)
+  >For a full description of the raw dataset, I refer you to the documentation that was provided with it in the
+  zip file.  The Readme.txt and Features.txt explain the organization of the data in complete detail.
+### Requirements
+* The code requires the plyr library
+* It is presumed that the downloaded zipped datafiles reside in the same directory as the run_analysis.R script
+* It is also presumed that the working directory has been set to this location
+
+### Code Steps
 
 
 ##Variables
