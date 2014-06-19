@@ -13,7 +13,8 @@
 
 #### Files Used  
 
-File Name | Contents
+File Name | Contents  
+--- | ---
 getdata_projectfiles_UCI HAR Dataset.zip | Download file containing all the other files
 features.txt | Column Labels
 X_test.txt | Test Subject Data
