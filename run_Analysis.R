@@ -82,15 +82,40 @@ subsetDataWithNames<-subsetDataWithNames[,-1]
 
 ## Requirement 4, Descriptive column names .. already done.
 ## Note: I added the feature names when the data was read, so I already do not have V1, V2 etc.
-## But I do need to clean the names from what was provided.
-## For clarity, move the work df to a tidyData result data.frame
+##      But I do need to clean the names from what was provided.
+##      I personally would prefer to use camel case variables, the lecture notes seemed to indicate
+##      that we shoudl use all small letters, no underscores, no parenthesis, no hypens just 
+##      long names that seem difficult to read (IMO) but I will do that
+## First, I noticed some apparent typo's near the end of the data where there is BodyBody, lets correct that first
+nameCleaning<-gsub("BodyBody","Body",colnames(subsetDataWithNames),fixed=TRUE)
+## Now replace the -X with xaxis, the -Y with yaxis and -Z with zaxis
+nameCleaning<-gsub("-X","xaxis",nameCleaning,fixed=TRUE)
+nameCleaning<-gsub("-Z","zaxis",nameCleaning,fixed=TRUE)
+nameCleaning<-gsub("-Y","yaxis",nameCleaning,fixed=TRUE)
+## Now remove the Parenthesis
+nameCleaning<-gsub("std()","stddev",nameCleaning,fixed=TRUE)
+nameCleaning<-gsub("mean()","mean",nameCleaning,fixed=TRUE)
+## Now any remaining -
+nameCleaning<-gsub("-","",nameCleaning,fixed=TRUE)
+## finally make sure it is all lower case
+nameCleaning<-tolower(nameCleaning)
+## Reassign the names
+colnames(subsetDataWithNames)<-nameCleaning
+
+## For clarity (i.e to know we are done cleaning), move the work df to a tidyData result data.frame
 tidyData<-subsetDataWithNames
+
 
 ## Requirement 5 - summarize the data
 ## use the Aggregate function to apply MEAN to all of the columns.  Note, do not include
 ## columns 1 and 2 since they are the "by" clause, so use col 3 through the end of the data frame
 ## as determined by the function ncols
-tidyDataAggregated<-aggregate(tidyData[3:ncol(tidyData)], by=list(tidyData$Subject.ID,tidyData$Activity.Description), mean)
+tidyDataAggregated<-aggregate(tidyData[3:ncol(tidyData)], by=list(tidyData$subject.id,tidyData$activity.description), FUN="mean")
+## Fix the Group.1 and Group.2 names
+colnames(tidyDataAggregated)[1:2]<-c("subjectid", "activitydescription")
+
+## Write out the tidy data set
+write.table(tidyDataAggregated, file = "Tidy_Result.txt", append = FALSE, row.names=FALSE, quote=FALSE, sep="\t")
 
 ## Clean up
 ## Delete the unzipped folder
