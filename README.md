@@ -1,5 +1,5 @@
 ## Background
-One of the most exciting areas in all of data science right now is wearable computing - see for example [this article](http://www.insideactivitytracking.com/data-science-activity-tracking-and-the-battle-for-the-worlds-top-sports-brand/). Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone.
+One of the most exciting areas in all of data science right now is wearable computing - see for example [this article](http://www.insideactivitytracking.com/data-science-activity-tracking-and-the-battle-for-the-worlds-top-sports-brand/). Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users. The data used for this project represents data collected by the accelerometers on the Samsung Galaxy S smartphone.
 If you're interested, you can see a full description of the data [here](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 
 
@@ -25,8 +25,9 @@ You will be required to submit:
 
 ## Repository Contents
 File Name | Contents
-README.md| This ReadMe markdown file.
-CodeBook.md| The file containing the variable descriptions, and a description of the processing done in the code file *run_analysis.R*
-run_analysis.R| The file containing the statements used to transform the raw data to the result set of *tidy data*
-Tidy_Result.txt| Tab delimited text file which averages each varibale in the raw data (that is a Mean or Std Dev) by the test subject and the activity.
+--- | --- 
+README.md | This ReadMe markdown file.
+CodeBook.md | The file containing the variable descriptions, and a description of the processing done in the code file *run_analysis.R*
+run_analysis.R | The file containing the statements used to transform the raw data to the result set of *tidy data*
+Tidy_Result.txt | Tab delimited text file which averages each varibale in the raw data (that is a Mean or Std Dev) by the test subject and the activity.
 
