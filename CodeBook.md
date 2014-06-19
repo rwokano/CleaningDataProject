@@ -8,7 +8,7 @@
 * It is presumed that the downloaded zipped datafiles reside in the same directory as the run_analysis.R script
 * It is also presumed that the working directory has been set to this location
 
-### Code Steps
+### Code Steps  
 
 
 ##Variables
