@@ -11,7 +11,7 @@
 * It is also presumed that the working directory has been set to this location
 * I also did not optimize this code, it is heavily commented and almost always uses a new variable so the work can be easily traced.  For optimization, I would re-use the variables to reduce memory usage.
 
-#### Files Used
+#### Files Used  
 File Name | Contents
 getdata_projectfiles_UCI HAR Dataset.zip | Download file containing all the other files
 features.txt | Column Labels
@@ -51,16 +51,17 @@ Tidy_Result.txt | The output Tidy Dataset
 14. Complete requirement 4 - Add descriptive column names
   *  From above, I have already labeled the columns. I do not have V1, V2 V3 etc.  Personally, I would prefer to camel case the names, but the lecture seemed to indicate all lowercase, no hyphens, no underscores.  I feel this makes the variables difficult to use, but did so as I believe that was what was expected in the assignment.
   *  Using multipe calls to `gsub` I changed
-    1. -X to xaxis
-    2. -Y to yaxis
-    3. -Z to zaxis
-    4. changed the std() to stddev
-    5. changed the mean() to mean
-    6. removed any other parenthesis
-    7. removed any other hyphens
-    8. made all lower case
-    9. overlay the exisiting names with these new ones.
-    10. Copied into a new variable 'tidyData' for clarity
+    1.  Updated a typo which was BodyBody to just Body.
+    2. -X to xaxis
+    3. -Y to yaxis
+    4. -Z to zaxis
+    5. changed the std() to stddev
+    6. changed the mean() to mean
+    7. removed any other parenthesis
+    8. removed any other hyphens
+    9. made all lower case
+    10. overlay the exisiting names with these new ones.
+    11. Copied into a new variable 'tidyData' for clarity
 15. Complete requirement 5 - Aggregate the data
   *  Used the `aggregate` function passing it column 3 through the end of the data.frame using `ncols`
   *  Labeled the 2 coumns `aggregate` grouped by. (The Subject and Activity) so they are not labeled Group.1 and Group.2
