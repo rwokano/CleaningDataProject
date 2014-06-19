@@ -29,5 +29,5 @@ File Name | Contents
 README.md | This ReadMe markdown file.
 CodeBook.md | The file containing the variable descriptions, and a description of the processing done in the code file *run_analysis.R*
 run_analysis.R | The file containing the statements used to transform the raw data to the result set of *tidy data*
-Tidy_Result.txt | Tab delimited text file which averages each varibale in the raw data (that is a Mean or Std Dev) by the test subject and the activity.
+Tidy_Result.txt | Tab delimited text file which averages each variable that was selected from the raw data by the test subject and the activity.
 
