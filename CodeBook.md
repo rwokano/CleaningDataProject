@@ -12,6 +12,7 @@
 * I also did not optimize this code, it is heavily commented and almost always uses a new variable so the work can be easily traced.  For optimization, I would re-use the variables to reduce memory usage.
 
 #### Files Used  
+
 File Name | Contents
 getdata_projectfiles_UCI HAR Dataset.zip | Download file containing all the other files
 features.txt | Column Labels
