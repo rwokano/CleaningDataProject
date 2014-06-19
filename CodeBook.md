@@ -2,7 +2,7 @@
   The original data set obtained as part of the assignment contained approximately 560 columns of observations.  This data was broken up into two
   sets.  Test data and Training data.  
   >For a full description of the raw dataset, I refer you to the documentation that was provided with it in the
-  zip file.  The Readme.txt and Features.txt explain the organization of the data in complete detail.  
+  zip file.  The Readme.txt and Features_info.txt explain the organization of the data in complete detail.  
   
   Following are several sections describing the requirements and the steps followed to tidy up the data.  Finally, there is a section naming the variables that remained at the end of the process along with what data type they are.
 #### Requirements / Presumptions
@@ -73,12 +73,12 @@ Tidy_Result.txt | The output Tidy Dataset
 
 
 ##Variable Overview
-The full data description can be found in the 'feature_info.txt' file of the downloaded data.  Below is a table mapping the original column name to the tidy name as it is in the 'tidy_Result.txt' file.  Also included is the type of data.  Of the approx 560 variables in the initial dataset, only 68 remain in the output dataset.
+The full data description can be found in the 'feature_info.txt' file of the downloaded data.  Below is a table mapping the original column name to the tidy name as it is in the 'tidy_Result.txt' file.  Also included is the type of data.  Of the approx 560 variables in the initial dataset, only 66 remain in the output dataset.
 
 Column Number | Original Name | Tidy Name | Data Type  
 ---| --- | --- | ---  
-1 | subjectid                   | subjectid | integer  
-2 | activitydescription         | activitydescription | factor  
+1 | *not provided*                   | subjectid | integer  
+2 | *not provided*         | activitydescription | factor  
 3 | tBodyAcc-mean()-X           | tbodyaccmeanxaxis       | numeric  
 4 | tBodyAcc-mean()-Y           | tbodyaccmeanyaxis | numeric             
 5 | tBodyAcc-mean()-Z           | tbodyaccmeanzaxis | numeric              
@@ -145,6 +145,8 @@ Column Number | Original Name | Tidy Name | Data Type
 66 | fBodyBodyGyroMag-std()      | fbodygyromagstddev      | numeric  
 67 | fBodyBodyGyroJerkMag-mean() | fbodygyrojerkmagmean | numeric  
 68 | fBodyBodyGyroJerkMag-std()  | fbodygyrojerkmagstddev  | numeric   
+
+
  
 
 
