@@ -58,8 +58,8 @@
 
 ##Variable Overview
 The full data description can be found in the 'feature_info.txt' file of the downloaded data.  Below is a table mapping the original column name to the tidy name as it is in the 'tidy_Result.txt' file.  Also included is the type of data.  
-Column Number | Original Name | Tidy Name | Data Type
----| --- | --- | ---
+Column Number | Original Name | Tidy Name | Data Type  
+---| --- | --- | ---  
 1 | subjectid                   | subjectid | integer  
 2 | activitydescription         | activitydescription | factor  
 3 | tBodyAcc-mean()-X           | tbodyaccmeanxaxis       | numeric  
