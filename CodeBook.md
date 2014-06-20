@@ -99,8 +99,8 @@ The features selected for this database come from the accelerometer and gyroscop
 * fBodyAccMag
 * fBodyAccJerkMag
 * fBodyGyroMag
-* fBodyGyroJerkMag
-Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
+* fBodyGyroJerkMag  
+>Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
 * gravityMean
 * tBodyAccMean
 * tBodyAccJerkMean
