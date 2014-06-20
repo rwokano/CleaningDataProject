@@ -23,6 +23,10 @@ You will be required to submit:
   * Any transformations or work that you performed to clean up the data    
 * You should also include a README.md in the repo with your scripts. This file explains how all of the scripts work and how they are connected.
 
+
+#### Files Used
+The files used for this project are documented in the CodeBook.md since there are many files in the data provided but only a small number are used for the project.  These are documented along with the variable list.
+
 ## Repository Contents
 File Name | Contents
 --- | --- 
@@ -31,6 +35,8 @@ CodeBook.md | The file containing the variable descriptions, and a description o
 run_analysis.R | The file containing the statements used to transform the raw data to the result set of *tidy data*. The code is heavily commented to give readers the idea of what is happening. In addition, a code walk-through is included in the CodeBook.md file.
 Tidy_Result.txt | Tab delimited text file which averages each variable that was selected from the raw data by the test subject and the activity.
 
-
+## Code Walk Through
+The actual code contained in 'run_analysis.R' is heavily commented to explain each line and the purpose.  In addtion, many variables are not re-used which is inefficient for memeory usage but makes it easier to look at and read should the need arise to debug.  In a *production* environment, this code would have been optimized.  
+For a complete walkthrough of the code and the data elements, please use the 'CodeBook.md' file.
 
 
