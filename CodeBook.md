@@ -1,13 +1,13 @@
 ## Code Walk-Through
   The original data set obtained as part of the assignment contained approximately 560 columns of observations.  This data was broken up into two
   sets.  Test data and Training data.  
-  >For a full description of the raw dataset, I refer you to the documentation that was provided with it in the
+  >For a full description of the raw data set, I refer you to the documentation that was provided with it in the
   zip file.  The Readme.txt and Features_info.txt explain the organization of the data in complete detail.  
   
   Following are several sections describing the requirements and the steps followed to tidy up the data.  Finally, there is a section naming the variables that remained at the end of the process along with what data type they are.
 #### Requirements / Presumptions
 * The code requires the `plyr` library
-* It is presumed that the downloaded zipped datafiles reside in the same directory as the run_analysis.R script
+* It is presumed that the downloaded zipped data files reside in the same directory as the run_analysis.R script
 * It is also presumed that the working directory has been set to this location
 * I also did not optimize this code, it is heavily commented and almost always uses a new variable so the work can be easily traced.  For optimization, I would re-use the variables to reduce memory usage.
 
@@ -24,21 +24,21 @@ subject_train.txt | The Subject IDs for the X_train file
 y_test.txt | The Activity IDs for the x_test file
 y_train.txt | The Activity IDs for the x_train file
 activity_labels.txt | The descriptive values the match the Activity ID
-Tidy_Result.txt | The output Tidy Dataset
+Tidy_Result.txt | The output Tidy Data set
 
 #### Code Steps
 1. Unzip the data into the working folder.
-2. Read the Columns labels, called 'Features' in the dataset.
+2. Read the Columns labels, called 'Features' in the data set.
 3. Read the actual data, it is in the X_test and X_train files.
 4. Apply the column names to the data in step 3 from the labels read in step 2.
 5. Read the Subject Identifiers.
 6. Label the Subject ID data.frame.
 7. Append the Subject information read in step 5/6 to the data.
-8. Read in the Row Labels, called 'Activities' in the dataset.
+8. Read in the Row Labels, called 'Activities' in the data set.
 9. Label the data read in step 8.
 10. Append the Activity information, read in step 8/9 to the data.
   *  At this point, I now have the data read in, column names added, the subject id added and the activity id added.
-11. Complete requirement 1 - merge into 1 dataset
+11. Complete requirement 1 - merge into 1 data set
 12. Complete requirement 2, select only variables that have mean() or std() in them
   *  Used separate `grep` function calls to get the column names to keep
   *  Be sure to keep column 1 and 2 which contain the Subject and Activity id's
@@ -52,7 +52,7 @@ Tidy_Result.txt | The output Tidy Dataset
   *  Drop column 1, which was the Activity ID. We no longer need it since the Description is present.
 14. Complete requirement 4 - Add descriptive column names
   *  From above, I have already labeled the columns. I do not have V1, V2 V3 etc.  Personally, I would prefer to camel case the names, but the lecture seemed to indicate all lowercase, no hyphens, no underscores.  I feel this makes the variables difficult to use, but did so as I believe that was what was expected in the assignment.
-  *  Using multipe calls to `gsub` I changed
+  *  Using multiple calls to `gsub` I changed
     1.  Updated a typo which was BodyBody to just Body.
     2. -X to xaxis
     3. -Y to yaxis
@@ -62,18 +62,18 @@ Tidy_Result.txt | The output Tidy Dataset
     7. removed any other parenthesis
     8. removed any other hyphens
     9. made all lower case
-    10. overlay the exisiting names with these new ones.
+    10. overlay the existing names with these new ones.
     11. Copied into a new variable 'tidyData' for clarity
 15. Complete requirement 5 - Aggregate the data
   *  Used the `aggregate` function passing it column 3 through the end of the data.frame using `ncols`
-  *  Labeled the 2 coumns `aggregate` grouped by. (The Subject and Activity) so they are not labeled Group.1 and Group.2
-  *  Write the data to a tab delimted file using `write.table`
+  *  Labeled the 2 columns `aggregate` grouped by. (The Subject and Activity) so they are not labeled Group.1 and Group.2
+  *  Write the data to a tab delimited file using `write.table`
 16. Clean-up
   *  Delete the data files unzipped in the first step using the `unlink` command.
 
 
 ##Data Elements
-The full data description can be found in the 'features.txt' file of the downloaded data.  Below is a general summary of the data elememts and the naming convention which was taken from the *feaure_info.txt* .
+The full data description can be found in the 'features.txt' file of the downloaded data.  Below is a subset of the information concerning the data elements and the naming convention which was taken from the *feaure_info.txt* .
 > ###### Quoted from the feature_info.txt contained in the data download.
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz.
 
@@ -108,7 +108,7 @@ The features selected for this database come from the accelerometer and gyroscop
 * tBodyGyroJerkMean    
 
 Per the assignment instructions, only elements containing `mean()` or `std()` were included in the result set. All other elements were dropped.
-Below is a table mapping the original column name to the tidy name as it is in the 'tidy_Result.txt' file.  Also included is the type of data.  Of the approx 560 variables in the initial dataset, only 66 remain in the output dataset.
+Below is a table mapping the original column name to the tidy name as it is in the 'tidy_Result.txt' file.  Also included is the type of data.  Of the approx 560 variables in the initial data set, only 66 remain in the output data set.
 
 Column Number | Original Name | Tidy Name | Data Type  
 ---| --- | --- | ---  
